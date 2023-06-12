@@ -1,19 +1,11 @@
 version: "3.8"
 
 services:
-  lab-nginx:
-    container_name: atd-lab-nginx
-    depends_on:
-      - atd-lab
-      - atd-lab-api
-    build:
-      dockerfile: Dockerfile
-      context: ./nginx
-    ports:
-      - 8080:80
   atd-lab:
     container_name: atd-lab
     image: jasoniv/atd-lab:latest
+    ports:
+      - 8080:3001
   atd-lab-api:
     container_name: atd-lab-api
     image: jasoniv/atd-lab-api:latest

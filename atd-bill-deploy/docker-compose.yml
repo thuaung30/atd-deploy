@@ -1,19 +1,11 @@
 version: "3.8"
 
 services:
-  atd-bill-nginx:
-    container_name: atd-bill-nginx
-    depends_on:
-      - atd-bill
-      - atd-bill-api
-    build:
-      dockerfile: Dockerfile
-      context: ./nginx
-    ports:
-      - 80:80
   atd-bill:
     container_name: atd-bill
     image: jasoniv/atd-bill:latest
+    ports:
+      - 80:3000
   atd-bill-api:
     container_name: atd-bill-api
     image: jasoniv/atd-bill-api:latest
